@@ -1,18 +1,18 @@
 const app = {};
 
 app.init = function() {
-  this.handleUsernameClick();
-  this.handleSubmit();
+  $('.username').click(this.handleUsernameClick);
+  $('#send .submit').submit(this.handleSubmit);
 };
 
 app.server = 'http://parse.sfm6.hackreactor.com/';
 
 app.handleUsernameClick = function() {
-  $('.username').click(() => console.log('hello world'));
+  console.log('hello world');
 };
 
 app.handleSubmit = function() {
-  $('#message').click(() => console.log('hello world'));
+  console.log('hello world');
 };
 
 app.send = function(message) {
@@ -37,14 +37,12 @@ app.fetch = function() {
     // This is the url you should use to communicate with the parse API server.
     url: this.server,
     type: 'GET',
-    data: JSON.stringify(message),
-    contentType: 'application/json',
     success: function (data) {
-      console.log('chatterbox: Message sent');
+      console.log('chatterbox: Messages recieved');
     },
     error: function (data) {
       // See: https://developer.mozilla.org/en-US/docs/Web/API/console.error
-      console.error('chatterbox: Failed to send message', data);
+      console.error('chatterbox: Failed to fetch message', data);
     }
   });
 };
