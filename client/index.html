@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <title>chatterbox</title>
     <link rel="stylesheet" href="styles/styles.css">
-
     <!-- dependencies -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
@@ -27,7 +26,23 @@
     <div id="main">
       <h1>chatterbox</h1>
       <!-- Your HTML goes here! -->
+
+<!-- copy and pasted from specrunner -->
+      <div id="rooms">
+        Room:
+        <select id="roomSelect">
+          <option value="">Select a room</option>
+        </select>
+      </div>
+      <form action="#" id="send" method="post">
+        <input type="text" name="message" id="message"/>
+        <button type="button" name="submit" class="submit"/>Submit</button>
+        <!-- <input type="submit" name="submit" class="submit"/> -->
+      </form>
+<!-- end copy and pasted from spec runner -->
+
     </div>
+    <h1>Messages</h1>
     <div id="chats"></div>
   </body>
 </html>
